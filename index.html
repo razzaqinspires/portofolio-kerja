@@ -3,283 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arifi Razzaq | Developer Portfolio</title>
+    <title>Curriculum Vitae - Arifi Razzaq</title>
+    <!-- Font Modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ikon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
+        /* Animasi Background Mewah */
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #172554, #020617);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 40px 20px;
         }
 
-        /* Animasi */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek Kaca Premium (Glassmorphism) */
+        .glass-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 24px;
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        /* Header / Hero Section */
-        .hero {
+        /* Bagian Kiri (Profil) */
+        .sidebar {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
             text-align: center;
-            margin-bottom: 50px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .hero img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+        .profile-img {
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 4px solid var(--accent);
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             margin-bottom: 20px;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            transition: transform 0.3s;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
-        .hero h2 {
-            color: var(--accent);
-            font-size: 1.2rem;
+        .sidebar h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .job-title {
+            color: #38bdf8;
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
         }
 
-        .hero p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .contact-info {
+            text-align: left;
+            margin-top: 30px;
         }
 
-        /* Social Badges */
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: var(--text-main);
-            background: var(--card-bg);
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: 1px solid #334155;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        /* Sections */
-        section {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            border: 1px solid #334155;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--accent);
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #cbd5e1;
         }
 
-        /* Tech Stack Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
+        .contact-item i {
+            width: 30px;
+            color: #38bdf8;
+            font-size: 18px;
         }
 
-        .skill-tag {
-            background: #334155;
-            padding: 8px 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 0.9rem;
+        /* Bagian Kanan (Konten) */
+        .main-content {
+            padding: 50px 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
             font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        /* Experience Timeline */
-        .job {
             margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #334155;
-        }
-        
-        .job:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
         }
 
-        .job h4 {
-            font-size: 1.1rem;
-            color: var(--text-main);
+        .section-title i {
+            margin-right: 12px;
+            color: #38bdf8;
         }
 
-        .job span {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: bold;
+        .about-text {
+            color: #cbd5e1;
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 35px;
         }
 
-        .job ul {
-            margin-top: 10px;
+        /* Highlight Keunggulan & Sikap Kerja */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .skill-badge {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #e0f2fe;
+            font-weight: 500;
+        }
+
+        /* Pengalaman Kerja */
+        .timeline-item {
+            margin-bottom: 25px;
             padding-left: 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            border-left: 2px solid rgba(56, 189, 248, 0.3);
+            position: relative;
         }
 
-        /* Projects Section (New for Dev) */
-        .project-card {
-            background: #0f172a;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border: 1px solid #334155;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: #38bdf8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #38bdf8;
         }
 
-        .project-card h4 {
+        .timeline-title {
+            font-weight: 600;
+            font-size: 16px;
             color: #fff;
         }
-        
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin: 10px 0;
+
+        .timeline-subtitle {
+            font-size: 13px;
+            color: #38bdf8;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            section { padding: 20px; }
+        .timeline-desc {
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Kartu "Nilai Plus" (Hobi Tech) */
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%);
+            border: 1px dashed rgba(56, 189, 248, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .bonus-card h4 {
+            color: #38bdf8;
+            font-size: 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bonus-card p {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 850px) {
+            .glass-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container animate">
-
-    <header class="hero">
-        <img src="foto.png" alt="Arifi Razzaq">
-        <h1>Arifi Razzaq</h1>
-        <h2>Software Developer</h2>
-        <p><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara, Indonesia</p>
-        <p><i class="fas fa-envelope"></i> vr.zaq1@gmail.com | <i class="fas fa-phone"></i> +62 831-9390-5842</p>
+    <div class="glass-container">
         
-        <div class="social-links">
-            <a href="https://github.com/razzaqinspires" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://instagram.com/ar.zzq" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://tiktok.com/@ar.zzq" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-        </div>
-    </header>
+        <!-- SIDEBAR PROFIL -->
+        <div class="sidebar">
+            <img src="foto.jpg" alt="Arifi Razzaq" class="profile-img">
+            <h1>Arifi Razzaq</h1>
+            <div class="job-title">Profesional Operasional & Layanan</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Medan, Sumatera Utara</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+62 831-9390-5842</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>vr.zaq1@gmail.com</span>
+                </div>
+            </div>
 
-    <section>
-        <h3><i class="fas fa-user"></i> Tentang Saya</h3>
-        <p style="color: var(--text-muted);">
-            Lulusan SMA Negeri 02 Samalanga yang kini berdedikasi membangun karir sebagai Developer. Saya memiliki latar belakang kuat di bidang layanan pelanggan dan operasional, yang membentuk saya menjadi individu yang disiplin, komunikatif, dan memiliki kemampuan pemecahan masalah (problem solving) yang tajam. Saya adalah pembelajar yang cepat, adaptif terhadap teknologi baru, dan siap berkontribusi dalam tim *engineering*.
-        </p>
-    </section>
-
-    <section>
-        <h3><i class="fas fa-code"></i> Keahlian & Tech Stack</h3>
-        <div class="skills-grid">
-            <div class="skill-tag">HTML5 & CSS3</div>
-            <div class="skill-tag">JavaScript</div>
-            <div class="skill-tag">Git & GitHub</div>
-            <div class="skill-tag">Problem Solving</div>
-            <div class="skill-tag">Cepat Belajar</div>
-            <div class="skill-tag">Kerja Sama Tim</div>
-            <div class="skill-tag">Adaptif</div>
-        </div>
-    </section>
-
-    <section>
-        <h3><i class="fas fa-laptop-code"></i> Portofolio Proyek</h3>
-        
-        <div class="project-card">
-            <h4>Website Portofolio Pribadi</h4>
-            <p>Website responsif yang dibangun menggunakan HTML, CSS modern, dan dirancang untuk menampilkan profil profesional serta proyek pengembangan web.</p>
-            <span style="font-size: 0.8rem; color: var(--accent);">Tech: HTML, CSS, Vercel</span>
-        </div>
-        
-        </section>
-
-    <section>
-        <h3><i class="fas fa-briefcase"></i> Pengalaman Kerja</h3>
-        
-        <div class="job">
-            <h4>Banda Jaya Ponsel</h4>
-            <span>Staff Toko</span>
-            <ul>
-                <li>Mengelola layanan pelanggan dan penjualan produk serta aksesoris.</li>
-                <li>Mengelola akun media sosial toko dan mengatur kampanye iklan/promosi.</li>
-            </ul>
+            <!-- Tambahan Data Pribadi (Opsional tapi disukai HRD) -->
+            <div class="contact-info" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <div class="contact-item">
+                    <i class="fas fa-user-check"></i>
+                    <span>Laki-laki | Belum Menikah</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-flag"></i>
+                    <span>Warga Negara Indonesia</span>
+                </div>
+            </div>
         </div>
 
-        <div class="job">
-            <h4>PT Pabrik Tikar & PT Pabrik Mebel</h4>
-            <span>Helper / Operator</span>
-            <ul>
-                <li>Mengoperasikan mesin produksi dan memastikan kualitas hasil sesuai standar perusahaan.</li>
-                <li>Menyusun dan mengelola tata letak barang jadi untuk efisiensi logistik.</li>
-            </ul>
-        </div>
+        <!-- KONTEN UTAMA -->
+        <div class="main-content">
+            
+            <!-- TENTANG SAYA (Diperbarui sesuai instruksi) -->
+            <div class="section-title">
+                <i class="fas fa-user-tie"></i> Tentang Saya
+            </div>
+            <p class="about-text">
+                Saya adalah lulusan SMA yang berdedikasi tinggi, disiplin, dan memiliki etos kerja yang kuat. Berbekal pengalaman di bidang operasional, layanan pelanggan, dan kerja tim, saya terbiasa bekerja di bawah tuntutan profesional dan bertanggung jawab penuh atas setiap tugas yang diberikan. 
+                <br><br>
+                Saya merupakan individu yang <b>sangat mudah diajari (fast learner)</b> dan mampu beradaptasi dengan cepat di lingkungan kerja baru—baik di dalam kantor, pengelolaan operasional, maupun di sektor pelayanan. Saya siap memberikan kontribusi maksimal, menaati standar perusahaan, dan terus berkembang bersama tim Anda.
+            </p>
 
-        <div class="job">
-            <h4>PT DARA & Restoran Sop Kambing Datuk</h4>
-            <span>Operasional & Layanan Pelanggan</span>
-            <ul>
-                <li>Menjaga standar operasional (SOP), kebersihan, dan memberikan pelayanan responsif kepada pelanggan.</li>
-            </ul>
-        </div>
-    </section>
+            <!-- KETERAMPILAN KERJA (Fokus Karakter & Operasional) -->
+            <div class="section-title">
+                <i class="fas fa-star"></i> Keunggulan Profesional
+            </div>
+            <div class="skills-wrapper">
+                <div class="skill-badge">Cepat Mempelajari Hal Baru</div>
+                <div class="skill-badge">Disiplin & Bertanggung Jawab</div>
+                <div class="skill-badge">Berorientasi pada Pelanggan</div>
+                <div class="skill-badge">Komunikatif & Ramah</div>
+                <div class="skill-badge">Dapat Bekerja dalam Tim</div>
+                <div class="skill-badge">Menjaga Kebersihan Area</div>
+                <div class="skill-badge">Pemecahan Masalah</div>
+            </div>
 
-</div>
+            <!-- PENGALAMAN KERJA -->
+            <div class="section-title">
+                <i class="fas fa-briefcase"></i> Pengalaman Kerja
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">Banda Jaya Ponsel</div>
+                <div class="timeline-subtitle">Staff Toko</div>
+                <div class="timeline-desc">
+                    Melayani pelanggan dengan ramah dan profesional, menjual produk handphone serta aksesoris. Dipercaya untuk membantu mengelola akun media sosial toko dan mengatur iklan/promosi dasar.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">PT Pabrik Tikar & PT Pabrik Mebel</div>
+                <div class="timeline-subtitle">Helper / Buruh / Bagian Operasional</div>
+                <div class="timeline-desc">
+                    Membantu proses produksi menggunakan mesin press dan potong. Menjaga kualitas hasil produksi agar selalu sesuai standar, serta menyusun barang jadi untuk keperluan gudang/pengiriman.
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-title">PT DARA & Restoran Sop Kambing Datuk</div>
+                <div class="timeline-subtitle">Cleaning Service & Waiter</div>
+                <div class="timeline-desc">
+                    Menjaga kebersihan dan higienitas area sesuai standar operasional. Melayani pelanggan secara langsung dengan sopan, sigap, dan memastikan kepuasan konsumen.
+                </div>
+            </div>
+
+            <!-- NILAI PLUS (Trik menjadikan IT sebagai Hobi/Kelebihan Logika) -->
+            <div class="section-title" style="margin-top: 35px;">
+                <i class="fas fa-award"></i> Nilai Tambah Kompetensi
+            </div>
+            <div class="bonus-card">
+                <h4><i class="fas fa-lightbulb"></i> Minat Otodidak & Logika Sistematis</h4>
+                <p>
+                    Sebagai hobi dan untuk terus mengasah otak, saya aktif mempelajari teknologi dasar dan pemrograman secara mandiri (otodidak). Meskipun ini murni ketertarikan pribadi dan bukan latar belakang pekerjaan utama saya, hobi ini telah melatih saya untuk menjadi pribadi yang <b>sangat teliti, logis, dan terstruktur dalam memecahkan masalah (problem solving)</b> di dunia nyata.
+                </p>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 </html>
