@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifi Razzaq | Developer Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Social Badges */
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            background: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid #334155;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Tech Stack Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: #334155;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* Experience Timeline */
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .job span {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .job ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Section (New for Dev) */
+        .project-card {
+            background: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid #334155;
+        }
+
+        .project-card h4 {
+            color: #fff;
+        }
+        
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container animate">
+
+    <header class="hero">
+        <img src="foto.png" alt="Arifi Razzaq">
+        <h1>Arifi Razzaq</h1>
+        <h2>Software Developer</h2>
+        <p><i class="fas fa-map-marker-alt"></i> Medan, Sumatera Utara, Indonesia</p>
+        <p><i class="fas fa-envelope"></i> vr.zaq1@gmail.com | <i class="fas fa-phone"></i> +62 831-9390-5842</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/razzaqinspires" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://instagram.com/ar.zzq" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://tiktok.com/@ar.zzq" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </header>
+
+    <section>
+        <h3><i class="fas fa-user"></i> Tentang Saya</h3>
+        <p style="color: var(--text-muted);">
+            Lulusan SMA Negeri 02 Samalanga yang kini berdedikasi membangun karir sebagai Developer. Saya memiliki latar belakang kuat di bidang layanan pelanggan dan operasional, yang membentuk saya menjadi individu yang disiplin, komunikatif, dan memiliki kemampuan pemecahan masalah (problem solving) yang tajam. Saya adalah pembelajar yang cepat, adaptif terhadap teknologi baru, dan siap berkontribusi dalam tim *engineering*.
+        </p>
+    </section>
+
+    <section>
+        <h3><i class="fas fa-code"></i> Keahlian & Tech Stack</h3>
+        <div class="skills-grid">
+            <div class="skill-tag">HTML5 & CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">Git & GitHub</div>
+            <div class="skill-tag">Problem Solving</div>
+            <div class="skill-tag">Cepat Belajar</div>
+            <div class="skill-tag">Kerja Sama Tim</div>
+            <div class="skill-tag">Adaptif</div>
+        </div>
+    </section>
+
+    <section>
+        <h3><i class="fas fa-laptop-code"></i> Portofolio Proyek</h3>
+        
+        <div class="project-card">
+            <h4>Website Portofolio Pribadi</h4>
+            <p>Website responsif yang dibangun menggunakan HTML, CSS modern, dan dirancang untuk menampilkan profil profesional serta proyek pengembangan web.</p>
+            <span style="font-size: 0.8rem; color: var(--accent);">Tech: HTML, CSS, Vercel</span>
+        </div>
+        
+        </section>
+
+    <section>
+        <h3><i class="fas fa-briefcase"></i> Pengalaman Kerja</h3>
+        
+        <div class="job">
+            <h4>Banda Jaya Ponsel</h4>
+            <span>Staff Toko</span>
+            <ul>
+                <li>Mengelola layanan pelanggan dan penjualan produk serta aksesoris.</li>
+                <li>Mengelola akun media sosial toko dan mengatur kampanye iklan/promosi.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h4>PT Pabrik Tikar & PT Pabrik Mebel</h4>
+            <span>Helper / Operator</span>
+            <ul>
+                <li>Mengoperasikan mesin produksi dan memastikan kualitas hasil sesuai standar perusahaan.</li>
+                <li>Menyusun dan mengelola tata letak barang jadi untuk efisiensi logistik.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h4>PT DARA & Restoran Sop Kambing Datuk</h4>
+            <span>Operasional & Layanan Pelanggan</span>
+            <ul>
+                <li>Menjaga standar operasional (SOP), kebersihan, dan memberikan pelayanan responsif kepada pelanggan.</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
